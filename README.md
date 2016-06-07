@@ -1,1 +1,3 @@
-# memo-board
+# Memo Board
+
+Use React

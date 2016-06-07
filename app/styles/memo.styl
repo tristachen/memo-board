@@ -1,0 +1,72 @@
+$base = 300px
+
+.memo
+  margin 20px
+  border-top-left-radius 2px
+  border-top-right-radius 2px
+  border-bottom-left-radius 8px
+  border-bottom-right-radius 8px
+
+//memo ratio
+for w in (1..2)
+  for h in (1..2)
+    .memo--{w}x{h}
+      size $base*w $base*h
+
+//memo type
+for i in (1..7)
+  str = getOrdinalNumbers(i)
+  .memo--{str}
+    background-color $colors[( i - 1 )]
+
+.memo__container
+  size 100% calc(100% - 30px)
+
+  .memo__text
+    size 100%
+    padding 10px
+    box-sizing border-box
+    background transparent
+
+.memo__toolbar
+  size 100% 30px
+  display flex
+  padding 5px
+  box-sizing border-box
+
+  .btn:last-child
+    margin-left auto
+
+.memo__select--type
+  appearance button
+  size 16px
+  border 2px solid #E8DAC6
+  border-radius 100%
+  font-size 0
+
+.memo__select--type__option
+  color transparent
+  font-size 8px
+
+.memo__select--ratio
+  margin-left 5px
+  appearance button
+  size 32px 20px
+  border none
+  border-bottom 2px solid #E8DAC6
+  border-radius 2px
+  font-size 14px
+  color white
+  background-color transparent
+  cursor pointer
+
+.memo__select--ratio__option
+  color white
+  font-size 8px
+  background-color #E8DAC6
+
+for i in (1..7)
+  .memo__select--type__option::nth-child(i)
+    size 10px
+    border-radius 5px
+    background-color $colors[( i - 1 )]

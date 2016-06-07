@@ -1,0 +1,42 @@
+$colors = (#DB4347 #EAC42D #81BEBA #00BCD4 #414D5F #6C529B #8B8274)
+
+body
+  size 100%
+  color white
+  font-size 20px
+  font-family '微軟正黑體'
+  background-color #E8DAC6
+  overflow hidden
+
+.memo-board
+  display flex
+
+.memo-board__memos
+  display flex
+  justify-content center
+  align-items center
+  flex-wrap wrap
+  width calc(100vw - 60px)
+  height 100vh
+  overflow-y auto
+
+.memo-board__toolbar
+  margin-left auto
+  display flex
+  flex-direction column
+  justify-content space-between
+  align-items center
+  padding-top 20px
+  padding-bottom 20px
+  size 70px 100vh
+  box-sizing border-box
+  background-color #CABDAC
+
+  hr
+    width 80%
+
+
+for i in (1..7)
+  str = getOrdinalNumbers(i)
+  .bg-color-{str}
+    background-color $colors[( i - 1 )]

@@ -1,0 +1,6 @@
+getOrdinalNumbers(num)
+  postfix = (th st nd rd)
+  twoDigits = num % 100             //for 1, 2, 3
+  notIn20 = ( twoDigits - 20 ) % 10 //for 21, 22, 23, 31, 32, 33, etc...
+  which = postfix[notIn20] || postfix[twoDigits] || postfix[0]
+  s('%s%s', num, which)
